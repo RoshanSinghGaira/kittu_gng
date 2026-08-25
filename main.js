@@ -1,5 +1,5 @@
 /* =====================================================
-   TECHFEST 2026
+   NIRVAN 26
    ROBOT SCROLL ANIMATION (LOCKED) + WEBSITE SCRIPTS
    Works directly from file:// or any web server.
    ===================================================== */
