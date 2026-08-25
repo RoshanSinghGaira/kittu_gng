@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHFEST 2026 — Innovate. Build. Transform.</title>
+  <meta name="description"
+    content="TechFest 2026 — Annual flagship technology festival celebrating student innovation, hackathons, robotics, CTF, esports, and interactive workshops.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ─── 01. NAVBAR ─── -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#hero" class="brand-logo" aria-label="TechFest 2026 Home">
+        <span class="brand-title">TECHFEST</span>
+        <span class="brand-year">2026</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#events" class="nav-link">Events</a>
+        <a href="#highlights" class="nav-link">Why Attend</a>
+        <a href="#schedule" class="nav-link">Schedule</a>
+        <a href="#sponsors" class="nav-link">Sponsors</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-nav-register" id="btn-open-register">
+          <span>REGISTER NOW</span>
+          <span class="btn-arrow">→</span>
+        </button>
+
+        <button class="mobile-toggle-btn" id="mobile-toggle-btn" aria-label="Toggle navigation menu"
+          aria-expanded="false">
+          <i data-lucide="menu" class="icon-menu"></i>
+          <i data-lucide="x" class="icon-close"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <nav class="mobile-nav-links">
+        <a href="#hero" class="mobile-nav-link">Home</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#events" class="mobile-nav-link">Events</a>
+        <a href="#highlights" class="mobile-nav-link">Why Attend</a>
+        <a href="#schedule" class="mobile-nav-link">Schedule</a>
+        <a href="#sponsors" class="mobile-nav-link">Sponsors</a>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <button class="btn-primary w-full" id="mobile-btn-register">
+          REGISTER NOW →
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ─── 02. HERO SECTION ─── -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-tag">TECH FEST 2026</div>
+          <h1 class="hero-title">INNOVATE.<br>BUILD. TRANSFORM.</h1>
+          <p class="hero-desc">
+            Where ideas meet technology, creativity meets innovation, and students turn possibilities into reality.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#events" class="btn-primary">
+              <span>EXPLORE EVENTS</span>
+              <span class="btn-arrow">→</span>
+            </a>
+            <button class="btn-secondary" id="hero-btn-register">
+              <span>REGISTER NOW</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="#about" class="hero-scroll-indicator" aria-label="Scroll to about section">
+          <span class="scroll-text">SCROLL TO EXPLORE</span>
+          <i data-lucide="arrow-down" class="scroll-arrow"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── 03. ABOUT SECTION ─── -->
+    <section class="about-section" id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">ABOUT</span>
+          <h2 class="section-title">WHERE TECHNOLOGY MEETS POSSIBILITY</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-main-text">
+            <p class="about-lead">
+              TechFest 2026 brings together students, developers, creators, innovators, and technology enthusiasts
+              through competitions, workshops, and collaborative experiences.
+            </p>
+            <p class="about-body">
+              Over two focused days, participants collaborate to solve complex problems, build functional software and
+              hardware projects, and gain exposure to industry standards and modern engineering practices.
+            </p>
+          </div>
+
+          <div class="about-stats-grid">
+            <div class="stat-card">
+              <div class="stat-num">2,500+</div>
+              <div class="stat-label">Participants</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">₹65K+</div>
+              <div class="stat-label">Prize Pool</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">15+</div>
+              <div class="stat-label">Institutes</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">48h</div>
+              <div class="stat-label">Collaborative Fest</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 04. LOCKED ROBOT + EVENT SCROLL ANIMATION ─── -->
+    <div class="scroll-container" id="events">
+
+      <!-- ─── Sticky fullscreen viewport (LOCKED) ─── -->
+      <div class="viewport-container" id="viewport-container">
+
+        <!-- Robot canvas — layer 1 (background) (LOCKED) -->
+        <canvas id="animation-canvas"></canvas>
+
+        <!-- ─── Event Cards (LOCKED) ─── -->
+
+        <article class="event-card" id="card-hackathon" data-event="hackathon" data-side="left" role="button"
+          tabindex="0" aria-label="Open Hackathon event details">
+          <div class="card-shimmer"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-num">01</span>
+            </div>
+            <h2 class="card-title">HACKATHON</h2>
+            <p class="card-desc">Put your problem-solving skills to the test in a fast-paced competitive programming
+              challenge. Build, code, and compete against talented teams.</p>
+            <div class="card-footer">
+              <div class="card-divider"></div>
+              <span class="card-cta">VIEW DETAILS <span class="cta-arrow">→</span></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="event-card" id="card-treasure" data-event="treasure" data-side="right" role="button"
+          tabindex="0" aria-label="Open Treasure Hunt event details">
+          <div class="card-shimmer"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-num">02</span>
+            </div>
+            <h2 class="card-title">TREASURE HUNT</h2>
+            <p class="card-desc">A thrilling adventure combining logic, teamwork, observation, and problem-solving.
+              Follow clues and race to uncover the ultimate treasure.</p>
+            <div class="card-footer">
+              <div class="card-divider"></div>
+              <span class="card-cta">VIEW DETAILS <span class="cta-arrow">→</span></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="event-card" id="card-esports" data-event="esports" data-side="left" role="button" tabindex="0"
+          aria-label="Open E-Sports event details">
+          <div class="card-shimmer"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-num">03</span>
+            </div>
+            <h2 class="card-title">E-SPORTS</h2>
+            <p class="card-desc">Experience the ultimate competitive gaming arena where strategy, teamwork, reflexes,
+              and skill come together. Battle for victory.</p>
+            <div class="card-footer">
+              <div class="card-divider"></div>
+              <span class="card-cta">VIEW DETAILS <span class="cta-arrow">→</span></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="event-card" id="card-ctf" data-event="ctf" data-side="right" role="button" tabindex="0"
+          aria-label="Open CTF event details">
+          <div class="card-shimmer"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-num">04</span>
+            </div>
+            <h2 class="card-title">CTF</h2>
+            <p class="card-desc">Put your cybersecurity skills to the test through challenges covering cryptography,
+              web security, forensics, reverse engineering, and more.</p>
+            <div class="card-footer">
+              <div class="card-divider"></div>
+              <span class="card-cta">VIEW DETAILS <span class="cta-arrow">→</span></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="event-card" id="card-workshop" data-event="workshop" data-side="right" role="button"
+          tabindex="0" aria-label="Open Workshop event details">
+          <div class="card-shimmer"></div>
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-num">05</span>
+            </div>
+            <h2 class="card-title">WORKSHOP</h2>
+            <p class="card-desc">An interactive learning experience to bridge theory and practical skills. Learn from
+              experts and gain hands-on experience through engaging activities.</p>
+            <div class="card-footer">
+              <div class="card-divider"></div>
+              <span class="card-cta">VIEW DETAILS <span class="cta-arrow">→</span></span>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /viewport-container -->
+    </div><!-- /scroll-container -->
+
+    <!-- ─── 05. WHY ATTEND ─── -->
+    <section class="highlights-section" id="highlights">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">HIGHLIGHTS</span>
+          <h2 class="section-title">WHY ATTEND</h2>
+        </div>
+
+        <div class="highlights-grid">
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i data-lucide="trophy"></i>
+            </div>
+            <h3 class="highlight-title">COMPETE</h3>
+            <p class="highlight-desc">Challenge yourself against talented peers in coding, CTF, and esports tournaments.
+            </p>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i data-lucide="book-open"></i>
+            </div>
+            <h3 class="highlight-title">LEARN</h3>
+            <p class="highlight-desc">Gain practical knowledge through expert-led technical workshops and hands-on
+              sessions.</p>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i data-lucide="layers"></i>
+            </div>
+            <h3 class="highlight-title">CREATE</h3>
+            <p class="highlight-desc">Turn theoretical ideas into functional software solutions and working prototypes.
+            </p>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3 class="highlight-title">CONNECT</h3>
+            <p class="highlight-desc">Meet fellow innovators, mentors, and industry professionals from across
+              institutes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 06. SCHEDULE ─── -->
+    <section class="schedule-section" id="schedule">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">TIMELINE</span>
+          <h2 class="section-title">SCHEDULE</h2>
+        </div>
+
+        <div class="schedule-tabs-wrap">
+          <div class="schedule-tabs" role="tablist">
+            <button class="schedule-tab active" id="tab-day1" role="tab" aria-selected="true" aria-controls="panel-day1"
+              data-day="1">
+              DAY 01 — OCT 12
+            </button>
+            <button class="schedule-tab" id="tab-day2" role="tab" aria-selected="false" aria-controls="panel-day2"
+              data-day="2">
+              DAY 02 — OCT 13
+            </button>
+          </div>
+        </div>
+
+        <div class="schedule-panels">
+          <!-- Day 1 -->
+          <div class="schedule-panel active" id="panel-day1" role="tabpanel" aria-labelledby="tab-day1">
+            <div class="timeline-list">
+              <div class="timeline-row">
+                <div class="timeline-time">09:00 AM</div>
+                <div class="timeline-detail">
+                  <h4 class="timeline-event-name">Opening Keynote</h4>
+                  <p class="timeline-event-meta">Main Auditorium • Welcome address and event orientation</p>
+                </div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-time">10:00 AM – 06:00 PM</div>
+                <div class="timeline-detail">
+                  <h4 class="timeline-event-name">Hackathon: 8-Hour Build Sprint</h4>
+                  <p class="timeline-event-meta">Computer Lab 1 • Team size: 2–4 members • Prize: ₹15,000</p>
+                </div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-time">10:30 AM – 01:00 PM</div>
+                <div class="timeline-detail">
+                  <h4 class="timeline-event-name">Technical Workshop</h4>
+                  <p class="timeline-event-meta">Seminar Hall – Block A • Hands-on practical masterclass</p>
+                </div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-time">02:00 PM – 07:00 PM</div>
+                <div class="timeline-detail">
+                  <h4 class="timeline-event-name">E-Sports Championship</h4>
+                  <p class="timeline-event-meta">Gaming Arena – Block B • Competitive arena match • Prize: ₹20,000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 2 -->
+          <div class="schedule-panel" id="panel-day2" role="tabpanel" aria-labelledby="tab-day2">
+            <div class="timeline-list">
+              <div class="timeline-row">
+                <div class="timeline-time">09:30 AM – 04:30 PM</div>
+                <div class="timeline-detail">
+                  <h4 class="timeline-event-name">Capture The Flag (CTF)</h4>
+                  <p class="timeline-event-meta">Cyber Security Lab • Team size: 1–3 members • Prize: ₹18,000</p>
+                </div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-time">11:00 AM – 02:00 PM</div>
+                <div class="timeline-detail">
+                  <h4 class="timeline-event-name">Treasure Hunt</h4>
+                  <p class="timeline-event-meta">Campus Main Block • Team size: 3–5 members • Prize: ₹10,000</p>
+                </div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-time">05:00 PM – 06:30 PM</div>
+                <div class="timeline-detail">
+                  <h4 class="timeline-event-name">Award Ceremony & Closing</h4>
+                  <p class="timeline-event-meta">Main Amphitheatre • Prize distribution and valedictory</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 07. SPONSORS ─── -->
+    <section class="sponsors-section" id="sponsors">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">PARTNERS</span>
+          <h2 class="section-title">SPONSORS</h2>
+        </div>
+
+        <div class="sponsors-grid">
+          <div class="sponsor-box">
+            <span class="sponsor-name">PARTNER 01</span>
+          </div>
+          <div class="sponsor-box">
+            <span class="sponsor-name">PARTNER 02</span>
+          </div>
+          <div class="sponsor-box">
+            <span class="sponsor-name">PARTNER 03</span>
+          </div>
+          <div class="sponsor-box">
+            <span class="sponsor-name">PARTNER 04</span>
+          </div>
+          <div class="sponsor-box">
+            <span class="sponsor-name">PARTNER 05</span>
+          </div>
+          <div class="sponsor-box">
+            <span class="sponsor-name">PARTNER 06</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 08. FINAL CTA ─── -->
+    <section class="cta-section" id="cta">
+      <div class="section-container">
+        <div class="cta-box">
+          <h2 class="cta-title">READY TO BUILD THE FUTURE?</h2>
+          <p class="cta-desc">
+            Your next idea could be the one that changes everything.
+          </p>
+          <div class="cta-actions">
+            <button class="btn-primary" id="cta-btn-register">
+              <span>REGISTER NOW</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── 09. FOOTER ─── -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-title">TECHFEST</span>
+          <span class="brand-year">2026</span>
+          <p class="footer-tagline">Annual festival celebrating engineering, code, and innovation.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <a href="#hero" class="footer-link">Home</a>
+          <a href="#about" class="footer-link">About</a>
+          <a href="#events" class="footer-link">Events</a>
+          <a href="#schedule" class="footer-link">Schedule</a>
+          <a href="#sponsors" class="footer-link">Sponsors</a>
+          <a href="#cta" class="footer-link">Contact</a>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+            aria-label="GitHub">
+            <i data-lucide="github"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+            aria-label="Twitter">
+            <i data-lucide="twitter"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+            aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+            aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 TECHFEST. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── REUSABLE EVENT DETAILS MODAL (LOCKED) ─── -->
+  <div id="event-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-event-title"
+    aria-hidden="true">
+    <div class="modal-box" id="modal-box">
+
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">✕</button>
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <span class="modal-num" id="modal-num"></span>
+        <h2 class="modal-event-title" id="modal-event-title"></h2>
+        <p class="modal-desc" id="modal-desc"></p>
+      </div>
+
+      <!-- Divider -->
+      <div class="modal-section-divider"></div>
+
+      <!-- Event Information -->
+      <div class="modal-section">
+        <h3 class="modal-section-title">EVENT INFORMATION</h3>
+        <div class="modal-info-grid">
+          <div class="info-item">
+            <i data-lucide="calendar" class="info-icon"></i>
+            <div class="info-text">
+              <span class="info-label">DATE</span>
+              <span class="info-val" id="modal-date"></span>
+            </div>
+          </div>
+          <div class="info-item">
+            <i data-lucide="clock" class="info-icon"></i>
+            <div class="info-text">
+              <span class="info-label">TIME</span>
+              <span class="info-val" id="modal-time"></span>
+            </div>
+          </div>
+          <div class="info-item">
+            <i data-lucide="map-pin" class="info-icon"></i>
+            <div class="info-text">
+              <span class="info-label">VENUE</span>
+              <span class="info-val" id="modal-venue"></span>
+            </div>
+          </div>
+          <div class="info-item">
+            <i data-lucide="users" class="info-icon"></i>
+            <div class="info-text">
+              <span class="info-label">TEAM SIZE</span>
+              <span class="info-val" id="modal-team"></span>
+            </div>
+          </div>
+          <div class="info-item">
+            <i data-lucide="graduation-cap" class="info-icon"></i>
+            <div class="info-text">
+              <span class="info-label">ELIGIBILITY</span>
+              <span class="info-val" id="modal-eligibility"></span>
+            </div>
+          </div>
+          <div class="info-item">
+            <i data-lucide="indian-rupee" class="info-icon"></i>
+            <div class="info-text">
+              <span class="info-label">REGISTRATION FEE</span>
+              <span class="info-val" id="modal-fee"></span>
+            </div>
+          </div>
+          <div class="info-item info-item--prize">
+            <i data-lucide="trophy" class="info-icon info-icon--prize"></i>
+            <div class="info-text">
+              <span class="info-label">PRIZE POOL</span>
+              <span class="info-val info-val--prize" id="modal-prize"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="modal-section-divider"></div>
+
+      <!-- Rules -->
+      <div class="modal-section">
+        <h3 class="modal-section-title">RULES</h3>
+        <ol class="modal-rules" id="modal-rules"></ol>
+      </div>
+
+      <!-- Divider -->
+      <div class="modal-section-divider"></div>
+
+      <!-- CTA -->
+      <div class="modal-footer">
+        <button class="btn-register" id="btn-register">REGISTER NOW <i data-lucide="arrow-right"
+            class="btn-icon"></i></button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── MINIMAL REGISTRATION MODAL ─── -->
+  <div id="quick-register-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="reg-modal-title"
+    aria-hidden="true">
+    <div class="modal-box reg-modal-box">
+      <button class="modal-close" id="reg-modal-close-btn" aria-label="Close registration modal">✕</button>
+
+      <div class="modal-header">
+        <h2 class="modal-event-title" id="reg-modal-title">REGISTER FOR TECHFEST</h2>
+        <p class="modal-desc">Complete your registration pass for TechFest 2026 events.</p>
+      </div>
+
+      <div class="modal-section-divider"></div>
+
+      <form id="registration-form" class="reg-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="reg-fullname" class="form-label">FULL NAME</label>
+            <input type="text" id="reg-fullname" name="fullname" class="form-input" placeholder="Your full name"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-email" class="form-label">EMAIL</label>
+            <input type="email" id="reg-email" name="email" class="form-input" placeholder="name@college.edu" required>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-college" class="form-label">COLLEGE / INSTITUTE</label>
+            <input type="text" id="reg-college" name="college" class="form-input" placeholder="Institute name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-track" class="form-label">SELECT EVENT</label>
+            <select id="reg-track" name="track" class="form-select" required>
+              <option value="hackathon">01 Hackathon</option>
+              <option value="treasure">02 Treasure Hunt</option>
+              <option value="esports">03 E-Sports Arena</option>
+              <option value="ctf">04 CTF Challenge</option>
+              <option value="workshop">05 Workshop</option>
+              <option value="all">All-Access Pass</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-section-divider"></div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn-primary w-full" id="btn-submit-registration">
+            CONFIRM REGISTRATION →
+          </button>
+        </div>
+      </form>
+
+      <div id="reg-success-box" class="reg-success-box" style="display: none;">
+        <h3 class="success-title">REGISTRATION CONFIRMED</h3>
+        <p class="success-desc">
+          Your spot has been reserved. A confirmation email has been dispatched.
+        </p>
+        <button class="btn-primary" id="btn-close-success">DONE</button>
+      </div>
+    </div>
+  </div>
+
+  <script>lucide.createIcons();</script>
+  <script src="main.js"></script>
+</body>
+
+</html>
