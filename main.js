@@ -1,7 +1,6 @@
 /* =====================================================
    NIRVAN 26
-   ROBOT SCROLL ANIMATION (LOCKED) + WEBSITE SCRIPTS
-   Works directly from file:// or any web server.
+   ROBOT SCROLL ANIMATION (LOCKED) + PLATFORM SCRIPTS
    ===================================================== */
 
 'use strict';
@@ -189,7 +188,6 @@ function updateCards(sf) {
     const el = cardEls[t.id];
     if (!el) return;
 
-    // ── Phase detection ──────────────────────────────
     let fadeInProg = 0;
     let holdProg = 0;
     let fadeOutProg = 0;
@@ -206,14 +204,12 @@ function updateCards(sf) {
       phase = 'out';
     }
 
-    // ── Opacity ──────────────────────────────────────
     let op = 0;
     if (phase === 'in') op = easeOutCubic(fadeInProg);
     if (phase === 'hold') op = 1;
     if (phase === 'out') op = 1 - easeInOutCubic(fadeOutProg);
     op = Math.max(0, Math.min(1, op));
 
-    // ── Transform ────────────────────────────────────
     let slideX = 0;
     let slideY = 0;
     let rot = 0;
@@ -238,7 +234,6 @@ function updateCards(sf) {
       scale = 1 - 0.05 * p;
     }
 
-    // ── Apply ─────────────────────────────────────────
     el.style.opacity = op;
     el.style.transform = [
       `translateY(calc(-50% + ${slideY.toFixed(2)}px))`,
@@ -247,19 +242,17 @@ function updateCards(sf) {
       `rotateZ(${rot.toFixed(3)}deg)`,
     ].join(' ');
 
-    // ── Pointer events ────────────────────────────────
     if (op > 0.1) {
       el.classList.add('card-active');
     } else {
       el.classList.remove('card-active');
     }
 
-    // ── Shimmer — fires once at ~40% fade-in ─────────
     const shimEl = shimmerEls[t.id];
     if (shimEl && !shimmerRan[t.id] && phase === 'in' && fadeInProg >= 0.4) {
       shimmerRan[t.id] = true;
       shimEl.classList.remove('shimmer-run');
-      void shimEl.offsetWidth; // force reflow
+      void shimEl.offsetWidth;
       shimEl.classList.add('shimmer-run');
     }
     if (phase === 'none') {
@@ -480,6 +473,32 @@ if (btnEventModalRegister) {
 }
 
 // ─────────────────────────────────────────────────────
+// GLOBAL SCROLL REVEAL SYSTEM (INTERSECTION OBSERVER)
+// ─────────────────────────────────────────────────────
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window)) {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.08,
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+}
+
+// ─────────────────────────────────────────────────────
 // NAVBAR BEHAVIOR & ACTIVE SECTION HIGHLIGHTING
 // ─────────────────────────────────────────────────────
 const headerEl = document.getElementById('site-header');
@@ -554,6 +573,7 @@ const panelDay1 = document.getElementById('panel-day1');
 const panelDay2 = document.getElementById('panel-day2');
 
 function switchDayTab(day) {
+  if (!tabDay1 || !tabDay2 || !panelDay1 || !panelDay2) return;
   if (day === 1) {
     tabDay1.classList.add('active');
     tabDay1.setAttribute('aria-selected', 'true');
@@ -579,23 +599,63 @@ if (tabDay1 && tabDay2) {
 }
 
 // ─────────────────────────────────────────────────────
-// QUICK REGISTRATION MODAL
+// FAQ ACCORDION INTERACTION
+// ─────────────────────────────────────────────────────
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+    if (!questionBtn) return;
+    questionBtn.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      faqItems.forEach(other => {
+        if (other !== item) {
+          other.classList.remove('active');
+          const otherBtn = other.querySelector('.faq-question');
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      if (isActive) {
+        item.classList.remove('active');
+        questionBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        item.classList.add('active');
+        questionBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
+// ─────────────────────────────────────────────────────
+// REGISTRATION & PARTNERSHIP MODAL
 // ─────────────────────────────────────────────────────
 const regModal = document.getElementById('quick-register-modal');
 const regModalClose = document.getElementById('reg-modal-close-btn');
 const regForm = document.getElementById('registration-form');
 const regSuccessBox = document.getElementById('reg-success-box');
 const btnCloseSuccess = document.getElementById('btn-close-success');
+const regTrackSelect = document.getElementById('reg-track');
 
 const registerTriggers = [
   document.getElementById('btn-open-register'),
   document.getElementById('hero-btn-register'),
   document.getElementById('cta-btn-register'),
   document.getElementById('mobile-btn-register'),
+  document.getElementById('footer-btn-register'),
 ];
 
-function openRegModal() {
+const partnerTriggers = [
+  document.getElementById('btn-partner-inquire'),
+  document.getElementById('btn-partner-contact'),
+  document.getElementById('cta-btn-partner'),
+];
+
+function openRegModal(defaultTrack) {
   if (!regModal) return;
+  if (defaultTrack && regTrackSelect) {
+    regTrackSelect.value = defaultTrack;
+  }
   regModal.setAttribute('aria-hidden', 'false');
   regModal.classList.add('modal-open');
   document.body.classList.add('no-scroll');
@@ -614,7 +674,13 @@ function closeRegModal() {
 
 registerTriggers.forEach(btn => {
   if (btn) {
-    btn.addEventListener('click', openRegModal);
+    btn.addEventListener('click', () => openRegModal('all'));
+  }
+});
+
+partnerTriggers.forEach(btn => {
+  if (btn) {
+    btn.addEventListener('click', () => openRegModal('partner'));
   }
 });
 
@@ -644,11 +710,59 @@ if (btnCloseSuccess) {
 }
 
 // ─────────────────────────────────────────────────────
+// HERO BACKGROUND SUBTLE PARALLAX
+// ─────────────────────────────────────────────────────
+function initHeroParallax() {
+  const heroBg = document.getElementById('hero-parallax-bg');
+  const heroSec = document.getElementById('hero');
+  if (!heroBg || !heroSec) return;
+
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+  let isMoving = false;
+
+  heroSec.addEventListener('mousemove', e => {
+    const rect = heroSec.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    mouseX = ((e.clientX - cx) / (rect.width || 1)) * 14;
+    mouseY = ((e.clientY - cy) / (rect.height || 1)) * 14;
+
+    if (!isMoving) {
+      isMoving = true;
+      requestAnimationFrame(updateHeroParallax);
+    }
+  }, { passive: true });
+
+  heroSec.addEventListener('mouseleave', () => {
+    mouseX = 0;
+    mouseY = 0;
+  }, { passive: true });
+
+  function updateHeroParallax() {
+    currentX += (mouseX - currentX) * 0.08;
+    currentY += (mouseY - currentY) * 0.08;
+
+    const scrollOffset = Math.min(window.scrollY * 0.12, 120);
+    heroBg.style.transform = `translate3d(${-currentX.toFixed(2)}px, ${(-currentY + scrollOffset).toFixed(2)}px, 0)`;
+
+    if (Math.abs(mouseX - currentX) > 0.05 || Math.abs(mouseY - currentY) > 0.05) {
+      requestAnimationFrame(updateHeroParallax);
+    } else {
+      isMoving = false;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────
 // BOOT — register listeners before preload completes (LOCKED)
 // ─────────────────────────────────────────────────────
 updateCards(getScrollFraction());
 updateNavbar();
 highlightActiveNav();
+initScrollReveal();
+initHeroParallax();
+initFaqAccordion();
 
 window.addEventListener('scroll', onScroll, { passive: true });
 window.addEventListener('resize', () => {

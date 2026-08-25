@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NIRVAN 26 — Innovate. Build. Transform.</title>
+  <title>NIRVAN 26 — Build What's Next.</title>
   <meta name="description"
-    content="NIRVAN 26 — Annual flagship technology festival celebrating student innovation, hackathons, robotics, CTF, esports, and interactive workshops.">
+    content="NIRVAN 26 — A technology and innovation platform bringing ambitious students, creators and industry minds together through competition, learning and collaboration.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -17,7 +17,7 @@
 
 <body>
 
-  <!-- ─── 01. NAVBAR ─── -->
+  <!-- ─── 03. NAVBAR ─── -->
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="#hero" class="brand-logo" aria-label="NIRVAN 26 Home">
@@ -28,10 +28,9 @@
       <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
         <a href="#hero" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#events" class="nav-link">Events</a>
-        <a href="#highlights" class="nav-link">Why Attend</a>
+        <a href="#experience" class="nav-link">Experience</a>
         <a href="#schedule" class="nav-link">Schedule</a>
-        <a href="#sponsors" class="nav-link">Sponsors</a>
+        <a href="#partners" class="nav-link">Partners</a>
       </nav>
 
       <div class="header-actions">
@@ -53,10 +52,10 @@
       <nav class="mobile-nav-links">
         <a href="#hero" class="mobile-nav-link">Home</a>
         <a href="#about" class="mobile-nav-link">About</a>
-        <a href="#events" class="mobile-nav-link">Events</a>
-        <a href="#highlights" class="mobile-nav-link">Why Attend</a>
+        <a href="#experience" class="mobile-nav-link">Experience</a>
         <a href="#schedule" class="mobile-nav-link">Schedule</a>
-        <a href="#sponsors" class="mobile-nav-link">Sponsors</a>
+        <a href="#partners" class="mobile-nav-link">Partners</a>
+        <a href="#faq" class="mobile-nav-link">FAQ</a>
       </nav>
       <div class="mobile-drawer-footer">
         <button class="btn-primary w-full" id="mobile-btn-register">
@@ -67,19 +66,24 @@
   </header>
 
   <main>
-    <!-- ─── 02. HERO SECTION ─── -->
+    <!-- ─── 04 & 05. HERO SECTION ─── -->
     <section class="hero-section" id="hero">
+      <div class="hero-bg-wrapper">
+        <div class="hero-bg-image" id="hero-parallax-bg"></div>
+        <div class="hero-bg-overlay"></div>
+      </div>
       <div class="hero-container">
         <div class="hero-content">
-          <div class="hero-tag">NIRVAN 26</div>
-          <h1 class="hero-title">INNOVATE.<br>BUILD. TRANSFORM.</h1>
-          <p class="hero-desc">
-            Where ideas meet technology, creativity meets innovation, and students turn possibilities into reality.
+          <div class="hero-tag hero-animate-1">NIRVAN 26 · TECHNOLOGY & INNOVATION</div>
+          <h1 class="hero-title hero-animate-2">BUILD WHAT'S NEXT.</h1>
+          <p class="hero-secondary-line hero-animate-3">Ideas are everywhere. Impact comes from building them.</p>
+          <p class="hero-desc hero-animate-4">
+            A technology and innovation platform bringing ambitious students, creators and industry minds together through competition, learning and collaboration.
           </p>
 
-          <div class="hero-cta-group">
-            <a href="#events" class="btn-primary">
-              <span>EXPLORE EVENTS</span>
+          <div class="hero-cta-group hero-animate-5">
+            <a href="#experience" class="btn-primary">
+              <span>EXPLORE EXPERIENCE</span>
               <span class="btn-arrow">→</span>
             </a>
             <button class="btn-secondary" id="hero-btn-register">
@@ -89,56 +93,107 @@
           </div>
         </div>
 
-        <a href="#about" class="hero-scroll-indicator" aria-label="Scroll to about section">
+        <a href="#trust" class="hero-scroll-indicator hero-animate-5" aria-label="Scroll to highlights section">
           <span class="scroll-text">SCROLL TO EXPLORE</span>
           <i data-lucide="arrow-down" class="scroll-arrow"></i>
         </a>
       </div>
     </section>
 
-    <!-- ─── 03. ABOUT SECTION ─── -->
-    <section class="about-section" id="about">
+    <!-- ─── 06. TRUST STRIP ─── -->
+    <section class="trust-section" id="trust" data-reveal>
+      <div class="section-container trust-container">
+        <div class="trust-grid">
+          <div class="trust-item" data-reveal-child>
+            <div class="trust-num">05</div>
+            <div class="trust-label">EVENTS</div>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item" data-reveal-child>
+            <div class="trust-num">500+</div>
+            <div class="trust-label">PARTICIPANTS</div>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item" data-reveal-child>
+            <div class="trust-num">10+</div>
+            <div class="trust-label">MENTORS</div>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item" data-reveal-child>
+            <div class="trust-num">01</div>
+            <div class="trust-label">PLATFORM</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 07. BRAND STATEMENT ─── -->
+    <section class="statement-section" id="statement" data-reveal>
       <div class="section-container">
-        <div class="section-header">
-          <span class="section-label">ABOUT</span>
-          <h2 class="section-title">WHERE TECHNOLOGY MEETS POSSIBILITY</h2>
+        <div class="statement-box" data-reveal-child>
+          <span class="statement-tag">MISSION PHILOSOPHY</span>
+          <h2 class="statement-sub">TECHNOLOGY ISN'T JUST SOMETHING WE USE.</h2>
+          <h2 class="statement-lead">IT'S SOMETHING WE BUILD.</h2>
+          <p class="statement-body">
+            At NIRVAN 26, theory transforms into deployable code, engineered hardware, and collaborative systems built by the next generation of technologists.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 08. ABOUT SECTION ─── -->
+    <section class="about-section" id="about" data-reveal>
+      <div class="section-container">
+        <div class="section-header" data-reveal-child>
+          <span class="section-label">ABOUT NIRVAN 26</span>
+          <h2 class="section-title">MORE THAN AN EVENT.</h2>
         </div>
 
         <div class="about-grid">
-          <div class="about-main-text">
+          <div class="about-left-col" data-reveal-child>
             <p class="about-lead">
-              NIRVAN 26 brings together students, developers, creators, innovators, and technology enthusiasts
-              through competitions, workshops, and collaborative experiences.
+              NIRVAN 26 brings together students, developers, designers, creators and technology enthusiasts in an environment designed around experimentation, practical learning and meaningful collaboration.
             </p>
             <p class="about-body">
-              Over two focused days, participants collaborate to solve complex problems, build functional software and
-              hardware projects, and gain exposure to industry standards and modern engineering practices.
+              Whether building prototype software under timed constraints, defending systems against simulated cyber exploits, or strategizing in competitive arenas, every track is engineered to challenge boundaries.
             </p>
+            <div class="about-tags-cloud">
+              <span class="about-pill">Students</span>
+              <span class="about-pill">Developers</span>
+              <span class="about-pill">Designers</span>
+              <span class="about-pill">Creators</span>
+              <span class="about-pill">Industry Leaders</span>
+            </div>
           </div>
 
-          <div class="about-stats-grid">
-            <div class="stat-card">
-              <div class="stat-num">2,500+</div>
-              <div class="stat-label">Participants</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-num">₹65K+</div>
-              <div class="stat-label">Prize Pool</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-num">15+</div>
-              <div class="stat-label">Institutes</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-num">48h</div>
-              <div class="stat-label">Collaborative Fest</div>
+          <div class="about-right-col" data-reveal-child>
+            <div class="about-image-card">
+              <img src="assets/about_bg.jpg" alt="Advanced technology server infrastructure" class="about-card-img" loading="lazy">
+              <div class="about-image-overlay"></div>
+              <div class="about-image-caption">
+                <span class="caption-tag">INFRASTRUCTURE</span>
+                <span class="caption-title">High-Performance Computing & Engineering Labs</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── 04. LOCKED ROBOT + EVENT SCROLL ANIMATION ─── -->
+    <!-- ─── 09. EXPERIENCE PREVIEW ─── -->
+    <section class="experience-preview-section" id="experience" data-reveal>
+      <div class="section-container">
+        <div class="experience-header" data-reveal-child>
+          <span class="section-label">INTERACTIVE DISCOVERY</span>
+          <h2 class="section-title">ONE PLATFORM.<br>FIVE WAYS TO EXPERIENCE TECHNOLOGY.</h2>
+          <p class="experience-subtitle">
+            Compete. Learn. Build. Connect. Discover.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 10. 🔒 EXISTING ROBOT + EVENT SCROLL ANIMATION (100% LOCKED) ─── -->
     <div class="scroll-container" id="events">
 
       <!-- ─── Sticky fullscreen viewport (LOCKED) ─── -->
@@ -237,63 +292,119 @@
       </div><!-- /viewport-container -->
     </div><!-- /scroll-container -->
 
-    <!-- ─── 05. WHY ATTEND ─── -->
-    <section class="highlights-section" id="highlights">
+    <!-- ─── 11. TRANSITION AFTER EVENTS ─── -->
+    <section class="post-events-section" data-reveal>
       <div class="section-container">
-        <div class="section-header">
-          <span class="section-label">HIGHLIGHTS</span>
-          <h2 class="section-title">WHY ATTEND</h2>
+        <div class="post-events-box" data-reveal-child>
+          <span class="section-label">BEYOND THE ARENA</span>
+          <h2 class="section-title">AND THAT'S JUST THE BEGINNING.</h2>
+          <p class="post-events-desc">
+            NIRVAN 26 is engineered not just for the competition floor, but for the long-term knowledge, industry connections, and scalable ideas that participants take forward.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 12. VALUE PROPOSITION ─── -->
+    <section class="benefits-section" id="why-techfest" data-reveal>
+      <div class="section-container">
+        <div class="section-header" data-reveal-child>
+          <span class="section-label">VALUE PROPOSITION</span>
+          <h2 class="section-title">WHY PEOPLE COME TO NIRVAN 26</h2>
         </div>
 
-        <div class="highlights-grid">
-          <div class="highlight-item">
-            <div class="highlight-icon">
-              <i data-lucide="trophy"></i>
+        <div class="benefits-grid">
+          <div class="benefit-card" data-reveal-child>
+            <div class="benefit-icon">
+              <i data-lucide="award"></i>
             </div>
-            <h3 class="highlight-title">COMPETE</h3>
-            <p class="highlight-desc">Challenge yourself against talented peers in coding, CTF, and esports tournaments.
-            </p>
+            <h3 class="benefit-title">COMPETE</h3>
+            <p class="benefit-desc">Put your skills to the test in real engineering challenges.</p>
           </div>
 
-          <div class="highlight-item">
-            <div class="highlight-icon">
+          <div class="benefit-card" data-reveal-child>
+            <div class="benefit-icon">
               <i data-lucide="book-open"></i>
             </div>
-            <h3 class="highlight-title">LEARN</h3>
-            <p class="highlight-desc">Gain practical knowledge through expert-led technical workshops and hands-on
-              sessions.</p>
+            <h3 class="benefit-title">LEARN</h3>
+            <p class="benefit-desc">Gain practical knowledge from dedicated masterclasses and mentors.</p>
           </div>
 
-          <div class="highlight-item">
-            <div class="highlight-icon">
-              <i data-lucide="layers"></i>
+          <div class="benefit-card" data-reveal-child>
+            <div class="benefit-icon">
+              <i data-lucide="cpu"></i>
             </div>
-            <h3 class="highlight-title">CREATE</h3>
-            <p class="highlight-desc">Turn theoretical ideas into functional software solutions and working prototypes.
-            </p>
+            <h3 class="benefit-title">BUILD</h3>
+            <p class="benefit-desc">Turn ideas into working solutions, prototypes, and code.</p>
           </div>
 
-          <div class="highlight-item">
-            <div class="highlight-icon">
+          <div class="benefit-card" data-reveal-child>
+            <div class="benefit-icon">
               <i data-lucide="users"></i>
             </div>
-            <h3 class="highlight-title">CONNECT</h3>
-            <p class="highlight-desc">Meet fellow innovators, mentors, and industry professionals from across
-              institutes.</p>
+            <h3 class="benefit-title">CONNECT</h3>
+            <p class="benefit-desc">Meet people building what's next across engineering disciplines.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── 06. SCHEDULE ─── -->
-    <section class="schedule-section" id="schedule">
+    <!-- ─── 13. HOW IT WORKS ─── -->
+    <section class="process-section" id="how-it-works" data-reveal>
       <div class="section-container">
-        <div class="section-header">
-          <span class="section-label">TIMELINE</span>
+        <div class="section-header" data-reveal-child>
+          <span class="section-label">THE JOURNEY</span>
+          <h2 class="section-title">HOW IT WORKS</h2>
+        </div>
+
+        <div class="process-grid-connected">
+          <div class="process-card-step" data-reveal-child>
+            <div class="process-step-header">
+              <span class="step-badge">01</span>
+              <span class="step-line-segment"></span>
+            </div>
+            <h3 class="process-title">DISCOVER</h3>
+            <p class="process-desc">Explore the opportunities and technical tracks available across the festival.</p>
+          </div>
+
+          <div class="process-card-step" data-reveal-child>
+            <div class="process-step-header">
+              <span class="step-badge">02</span>
+              <span class="step-line-segment"></span>
+            </div>
+            <h3 class="process-title">PARTICIPATE</h3>
+            <p class="process-desc">Choose your experience and register individually or with a team.</p>
+          </div>
+
+          <div class="process-card-step" data-reveal-child>
+            <div class="process-step-header">
+              <span class="step-badge">03</span>
+              <span class="step-line-segment"></span>
+            </div>
+            <h3 class="process-title">CREATE</h3>
+            <p class="process-desc">Build, compete and learn in collaborative real-time problem-solving arenas.</p>
+          </div>
+
+          <div class="process-card-step" data-reveal-child>
+            <div class="process-step-header">
+              <span class="step-badge">04</span>
+            </div>
+            <h3 class="process-title">CONNECT</h3>
+            <p class="process-desc">Take the experience beyond the event with mentors, networks and collaborators.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 14. SCHEDULE ─── -->
+    <section class="schedule-section" id="schedule" data-reveal>
+      <div class="section-container">
+        <div class="section-header" data-reveal-child>
+          <span class="section-label">EVENT PROGRAM</span>
           <h2 class="section-title">SCHEDULE</h2>
         </div>
 
-        <div class="schedule-tabs-wrap">
+        <div class="schedule-tabs-wrap" data-reveal-child>
           <div class="schedule-tabs" role="tablist">
             <button class="schedule-tab active" id="tab-day1" role="tab" aria-selected="true" aria-controls="panel-day1"
               data-day="1">
@@ -306,118 +417,321 @@
           </div>
         </div>
 
-        <div class="schedule-panels">
-          <!-- Day 1 -->
+        <div class="schedule-table-wrap" data-reveal-child>
+          <!-- Day 1 Panel -->
           <div class="schedule-panel active" id="panel-day1" role="tabpanel" aria-labelledby="tab-day1">
-            <div class="timeline-list">
-              <div class="timeline-row">
-                <div class="timeline-time">09:00 AM</div>
-                <div class="timeline-detail">
-                  <h4 class="timeline-event-name">Opening Keynote</h4>
-                  <p class="timeline-event-meta">Main Auditorium • Welcome address and event orientation</p>
-                </div>
-              </div>
-
-              <div class="timeline-row">
-                <div class="timeline-time">10:00 AM – 06:00 PM</div>
-                <div class="timeline-detail">
-                  <h4 class="timeline-event-name">Hackathon: 8-Hour Build Sprint</h4>
-                  <p class="timeline-event-meta">Computer Lab 1 • Team size: 2–4 members • Prize: ₹15,000</p>
-                </div>
-              </div>
-
-              <div class="timeline-row">
-                <div class="timeline-time">10:30 AM – 01:00 PM</div>
-                <div class="timeline-detail">
-                  <h4 class="timeline-event-name">Technical Workshop</h4>
-                  <p class="timeline-event-meta">Seminar Hall – Block A • Hands-on practical masterclass</p>
-                </div>
-              </div>
-
-              <div class="timeline-row">
-                <div class="timeline-time">02:00 PM – 07:00 PM</div>
-                <div class="timeline-detail">
-                  <h4 class="timeline-event-name">E-Sports Championship</h4>
-                  <p class="timeline-event-meta">Gaming Arena – Block B • Competitive arena match • Prize: ₹20,000</p>
-                </div>
-              </div>
-            </div>
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 220px;">TIME</th>
+                  <th scope="col">EVENT</th>
+                  <th scope="col" style="width: 260px;">VENUE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-time">
+                    <span class="time-flex"><i data-lucide="clock" class="sched-icon"></i> 09:00 AM</span>
+                  </td>
+                  <td>
+                    <div class="table-event-title">Opening Keynote</div>
+                    <div class="table-event-sub">Welcome address and festival orientation</div>
+                  </td>
+                  <td class="table-venue">
+                    <span class="venue-badge"><i data-lucide="map-pin"></i> Main Auditorium</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-time">
+                    <span class="time-flex"><i data-lucide="clock" class="sched-icon"></i> 10:00 AM – 06:00 PM</span>
+                  </td>
+                  <td>
+                    <div class="table-event-title">Hackathon: 8-Hour Build Sprint</div>
+                    <div class="table-event-sub">Rapid software & prototype development • Prize: ₹15,000</div>
+                  </td>
+                  <td class="table-venue">
+                    <span class="venue-badge"><i data-lucide="map-pin"></i> Computer Lab 1</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-time">
+                    <span class="time-flex"><i data-lucide="clock" class="sched-icon"></i> 10:30 AM – 01:00 PM</span>
+                  </td>
+                  <td>
+                    <div class="table-event-title">Technical Workshop</div>
+                    <div class="table-event-sub">Hands-on masterclass on modern engineering architectures</div>
+                  </td>
+                  <td class="table-venue">
+                    <span class="venue-badge"><i data-lucide="map-pin"></i> Seminar Hall – Block A</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-time">
+                    <span class="time-flex"><i data-lucide="clock" class="sched-icon"></i> 02:00 PM – 07:00 PM</span>
+                  </td>
+                  <td>
+                    <div class="table-event-title">E-Sports Championship</div>
+                    <div class="table-event-sub">Competitive tactical tournament • Prize: ₹20,000</div>
+                  </td>
+                  <td class="table-venue">
+                    <span class="venue-badge"><i data-lucide="map-pin"></i> Gaming Arena – Block B</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <!-- Day 2 -->
+          <!-- Day 2 Panel -->
           <div class="schedule-panel" id="panel-day2" role="tabpanel" aria-labelledby="tab-day2">
-            <div class="timeline-list">
-              <div class="timeline-row">
-                <div class="timeline-time">09:30 AM – 04:30 PM</div>
-                <div class="timeline-detail">
-                  <h4 class="timeline-event-name">Capture The Flag (CTF)</h4>
-                  <p class="timeline-event-meta">Cyber Security Lab • Team size: 1–3 members • Prize: ₹18,000</p>
-                </div>
-              </div>
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 220px;">TIME</th>
+                  <th scope="col">EVENT</th>
+                  <th scope="col" style="width: 260px;">VENUE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-time">
+                    <span class="time-flex"><i data-lucide="clock" class="sched-icon"></i> 09:30 AM – 04:30 PM</span>
+                  </td>
+                  <td>
+                    <div class="table-event-title">Capture The Flag (CTF)</div>
+                    <div class="table-event-sub">Cybersecurity, reverse engineering & cryptography • Prize: ₹18,000</div>
+                  </td>
+                  <td class="table-venue">
+                    <span class="venue-badge"><i data-lucide="map-pin"></i> Cyber Security Lab</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-time">
+                    <span class="time-flex"><i data-lucide="clock" class="sched-icon"></i> 11:00 AM – 02:00 PM</span>
+                  </td>
+                  <td>
+                    <div class="table-event-title">Treasure Hunt</div>
+                    <div class="table-event-sub">Logic puzzles, cryptography & campus exploration • Prize: ₹10,000</div>
+                  </td>
+                  <td class="table-venue">
+                    <span class="venue-badge"><i data-lucide="map-pin"></i> Campus Main Block</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-time">
+                    <span class="time-flex"><i data-lucide="clock" class="sched-icon"></i> 05:00 PM – 06:30 PM</span>
+                  </td>
+                  <td>
+                    <div class="table-event-title">Award Ceremony & Closing</div>
+                    <div class="table-event-sub">Prize distribution, partner recognitions & valedictory</div>
+                  </td>
+                  <td class="table-venue">
+                    <span class="venue-badge"><i data-lucide="map-pin"></i> Main Amphitheatre</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
 
-              <div class="timeline-row">
-                <div class="timeline-time">11:00 AM – 02:00 PM</div>
-                <div class="timeline-detail">
-                  <h4 class="timeline-event-name">Treasure Hunt</h4>
-                  <p class="timeline-event-meta">Campus Main Block • Team size: 3–5 members • Prize: ₹10,000</p>
-                </div>
-              </div>
+    <!-- ─── 15. IMPACT SECTION ─── -->
+    <section class="community-section" id="community" data-reveal>
+      <div class="section-container">
+        <div class="section-header" data-reveal-child>
+          <span class="section-label">AUDIENCE & COMMUNITY</span>
+          <h2 class="section-title">BUILT FOR THE PEOPLE BUILDING TOMORROW.</h2>
+        </div>
 
-              <div class="timeline-row">
-                <div class="timeline-time">05:00 PM – 06:30 PM</div>
-                <div class="timeline-detail">
-                  <h4 class="timeline-event-name">Award Ceremony & Closing</h4>
-                  <p class="timeline-event-meta">Main Amphitheatre • Prize distribution and valedictory</p>
-                </div>
+        <div class="community-grid">
+          <div class="community-card" data-reveal-child>
+            <div class="community-card-top">
+              <span class="community-badge">01</span>
+              <h3 class="community-role">STUDENTS</h3>
+            </div>
+            <p class="community-desc">Gaining foundational project experience, testing technical skills under competition, and discovering engineering pathways.</p>
+          </div>
+
+          <div class="community-card" data-reveal-child>
+            <div class="community-card-top">
+              <span class="community-badge">02</span>
+              <h3 class="community-role">CREATORS</h3>
+            </div>
+            <p class="community-desc">Designing interfaces, prototyping innovative hardware, and bringing conceptual product solutions to life.</p>
+          </div>
+
+          <div class="community-card" data-reveal-child>
+            <div class="community-card-top">
+              <span class="community-badge">03</span>
+              <h3 class="community-role">DEVELOPERS</h3>
+            </div>
+            <p class="community-desc">Writing high-performance code, securing infrastructures, and deploying scalable software architectures.</p>
+          </div>
+
+          <div class="community-card" data-reveal-child>
+            <div class="community-card-top">
+              <span class="community-badge">04</span>
+              <h3 class="community-role">INDUSTRY</h3>
+            </div>
+            <p class="community-desc">Mentoring high-potential talent, evaluating solutions, and partnering with next-generation innovators.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 16. PARTNERSHIP SECTION ─── -->
+    <section class="partners-section" id="partners" data-reveal>
+      <div class="section-container">
+        <div class="partners-box">
+          <div class="section-header" data-reveal-child>
+            <span class="section-label">FOR ORGANIZATIONS</span>
+            <h2 class="section-title">BUILD THE FUTURE WITH US.</h2>
+            <p class="partners-lead">
+              Partner with NIRVAN 26 to connect your organization with emerging technology talent, creators and innovators.
+            </p>
+          </div>
+
+          <div class="partners-grid">
+            <div class="partner-card" data-reveal-child>
+              <div class="partner-mark">
+                <span class="partner-bullet"></span>
+                <span class="partner-text">PARTNER 01</span>
               </div>
+            </div>
+            <div class="partner-card" data-reveal-child>
+              <div class="partner-mark">
+                <span class="partner-bullet"></span>
+                <span class="partner-text">PARTNER 02</span>
+              </div>
+            </div>
+            <div class="partner-card" data-reveal-child>
+              <div class="partner-mark">
+                <span class="partner-bullet"></span>
+                <span class="partner-text">PARTNER 03</span>
+              </div>
+            </div>
+            <div class="partner-card" data-reveal-child>
+              <div class="partner-mark">
+                <span class="partner-bullet"></span>
+                <span class="partner-text">PARTNER 04</span>
+              </div>
+            </div>
+            <div class="partner-card" data-reveal-child>
+              <div class="partner-mark">
+                <span class="partner-bullet"></span>
+                <span class="partner-text">PARTNER 05</span>
+              </div>
+            </div>
+            <div class="partner-card" data-reveal-child>
+              <div class="partner-mark">
+                <span class="partner-bullet"></span>
+                <span class="partner-text">PARTNER 06</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="partners-action" data-reveal-child>
+            <button class="btn-primary" id="btn-partner-inquire">
+              <span>BECOME A PARTNER</span>
+              <span class="btn-arrow">→</span>
+            </button>
+            <button class="btn-secondary" id="btn-partner-contact">
+              <span>TALK TO US</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 17. FAQ SECTION ─── -->
+    <section class="faq-section" id="faq" data-reveal>
+      <div class="section-container">
+        <div class="section-header" data-reveal-child>
+          <span class="section-label">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 class="section-title">QUESTIONS & ANSWERS</h2>
+        </div>
+
+        <div class="faq-list" data-reveal-child>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Who can participate?</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>NIRVAN 26 is open to undergraduate and postgraduate students, researchers, developers, and tech enthusiasts across all recognized colleges and institutions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How do I register?</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Click "Register Now" on any event card or navigation CTA. You can choose individual event passes (e.g., Hackathon, CTF, E-Sports) or an All-Access Pass for the full festival.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I participate in multiple events?</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, provided the event timelines do not directly overlap. Check the Schedule section above to plan your track participation across Day 1 and Day 2.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Where are the events held?</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>All events are hosted across specialized campus venues including the Main Auditorium, Computer Lab 1, Cyber Security Lab, and Block B Gaming Arena.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Will participants receive certificates?</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, all verified attendees and participants receive verified digital certificates of participation. Winners also receive merit certificates and cash prize pool distributions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How can organizations become partners?</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Organizations can click "Become a Partner" or "Talk to Us" to connect with our industry relations team regarding sponsorships, mentorship tracks, and talent recruitment.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── 07. SPONSORS ─── -->
-    <section class="sponsors-section" id="sponsors">
+    <!-- ─── 18. FINAL CONVERSION SECTION ─── -->
+    <section class="cta-section" id="cta" data-reveal>
       <div class="section-container">
-        <div class="section-header">
-          <span class="section-label">PARTNERS</span>
-          <h2 class="section-title">SPONSORS</h2>
-        </div>
-
-        <div class="sponsors-grid">
-          <div class="sponsor-box">
-            <span class="sponsor-name">PARTNER 01</span>
-          </div>
-          <div class="sponsor-box">
-            <span class="sponsor-name">PARTNER 02</span>
-          </div>
-          <div class="sponsor-box">
-            <span class="sponsor-name">PARTNER 03</span>
-          </div>
-          <div class="sponsor-box">
-            <span class="sponsor-name">PARTNER 04</span>
-          </div>
-          <div class="sponsor-box">
-            <span class="sponsor-name">PARTNER 05</span>
-          </div>
-          <div class="sponsor-box">
-            <span class="sponsor-name">PARTNER 06</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── 08. FINAL CTA ─── -->
-    <section class="cta-section" id="cta">
-      <div class="section-container">
-        <div class="cta-box">
-          <h2 class="cta-title">READY TO BUILD THE FUTURE?</h2>
+        <div class="cta-box" data-reveal-child>
+          <span class="cta-label">NIRVAN 26</span>
+          <h2 class="cta-title">YOUR NEXT IDEA STARTS HERE.</h2>
           <p class="cta-desc">
-            Your next idea could be the one that changes everything.
+            Bring your curiosity. Bring your skills. Bring your ambition.
           </p>
           <div class="cta-actions">
             <button class="btn-primary" id="cta-btn-register">
               <span>REGISTER NOW</span>
+              <span class="btn-arrow">→</span>
+            </button>
+            <button class="btn-secondary" id="cta-btn-partner">
+              <span>BECOME A PARTNER</span>
               <span class="btn-arrow">→</span>
             </button>
           </div>
@@ -426,47 +740,73 @@
     </section>
   </main>
 
-  <!-- ─── 09. FOOTER ─── -->
+  <!-- ─── 19. FOOTER ─── -->
   <footer class="site-footer">
     <div class="footer-container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <span class="brand-title">NIRVAN</span>
-          <span class="brand-year">26</span>
-          <p class="footer-tagline">Annual festival celebrating engineering, code, and innovation.</p>
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand & Tagline -->
+        <div class="footer-col-brand">
+          <div class="footer-brand-header">
+            <span class="brand-title">NIRVAN</span>
+            <span class="brand-year">26</span>
+          </div>
+          <p class="footer-tagline">
+            Building a platform for the next generation of technology and innovation.
+          </p>
         </div>
 
-        <div class="footer-links-group">
-          <a href="#hero" class="footer-link">Home</a>
-          <a href="#about" class="footer-link">About</a>
-          <a href="#events" class="footer-link">Events</a>
-          <a href="#schedule" class="footer-link">Schedule</a>
-          <a href="#sponsors" class="footer-link">Sponsors</a>
-          <a href="#cta" class="footer-link">Contact</a>
+        <!-- Col 2: Explore -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">EXPLORE</h4>
+          <div class="footer-links-list">
+            <a href="#hero" class="footer-link">Home</a>
+            <a href="#about" class="footer-link">About</a>
+            <a href="#events" class="footer-link">Events</a>
+            <a href="#schedule" class="footer-link">Schedule</a>
+          </div>
         </div>
 
-        <div class="footer-socials">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
-            aria-label="GitHub">
-            <i data-lucide="github"></i>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
-            aria-label="Twitter">
-            <i data-lucide="twitter"></i>
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
-            aria-label="Instagram">
-            <i data-lucide="instagram"></i>
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
-            aria-label="LinkedIn">
-            <i data-lucide="linkedin"></i>
-          </a>
+        <!-- Col 3: Connect -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">CONNECT</h4>
+          <div class="footer-links-list">
+            <a href="#partners" class="footer-link">Partners</a>
+            <a href="#faq" class="footer-link">FAQ</a>
+            <a href="#cta" class="footer-link">Contact</a>
+          </div>
+          <div class="footer-socials">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+              aria-label="GitHub">
+              <i data-lucide="github"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+              aria-label="Twitter">
+              <i data-lucide="twitter"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+              aria-label="LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+              aria-label="Instagram">
+              <i data-lucide="instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 4: Action -->
+        <div class="footer-col footer-col-action">
+          <h4 class="footer-col-title">PARTICIPATE</h4>
+          <p class="footer-action-desc">Join 500+ builders at NIRVAN 26.</p>
+          <button class="btn-primary w-full" id="footer-btn-register">
+            <span>REGISTER NOW</span>
+            <span class="btn-arrow">→</span>
+          </button>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 NIRVAN 26. All rights reserved.</p>
+        <p>© 2026 NIRVAN. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -573,7 +913,7 @@
 
       <div class="modal-header">
         <h2 class="modal-event-title" id="reg-modal-title">REGISTER FOR NIRVAN 26</h2>
-        <p class="modal-desc">Complete your registration pass for NIRVAN 26 events.</p>
+        <p class="modal-desc" id="reg-modal-sub">Complete your registration pass for NIRVAN 26 events.</p>
       </div>
 
       <div class="modal-section-divider"></div>
@@ -588,23 +928,24 @@
 
           <div class="form-group">
             <label for="reg-email" class="form-label">EMAIL</label>
-            <input type="email" id="reg-email" name="email" class="form-input" placeholder="name@college.edu" required>
+            <input type="email" id="reg-email" name="email" class="form-input" placeholder="name@organization.com" required>
           </div>
 
           <div class="form-group">
-            <label for="reg-college" class="form-label">COLLEGE / INSTITUTE</label>
-            <input type="text" id="reg-college" name="college" class="form-input" placeholder="Institute name" required>
+            <label for="reg-college" class="form-label">ORGANIZATION / INSTITUTE</label>
+            <input type="text" id="reg-college" name="college" class="form-input" placeholder="College or Company Name" required>
           </div>
 
           <div class="form-group">
-            <label for="reg-track" class="form-label">SELECT EVENT</label>
+            <label for="reg-track" class="form-label">SELECT TRACK / PASS</label>
             <select id="reg-track" name="track" class="form-select" required>
-              <option value="hackathon">01 Hackathon</option>
+              <option value="hackathon">01 Hackathon Sprint</option>
               <option value="treasure">02 Treasure Hunt</option>
-              <option value="esports">03 E-Sports Arena</option>
-              <option value="ctf">04 CTF Challenge</option>
-              <option value="workshop">05 Workshop</option>
-              <option value="all">All-Access Pass</option>
+              <option value="esports">03 E-Sports Tournament</option>
+              <option value="ctf">04 Cybersecurity CTF</option>
+              <option value="workshop">05 Technical Workshop</option>
+              <option value="partner">Partner / Sponsor Inquiry</option>
+              <option value="all">All-Access Attendee Pass</option>
             </select>
           </div>
         </div>
@@ -621,7 +962,7 @@
       <div id="reg-success-box" class="reg-success-box" style="display: none;">
         <h3 class="success-title">REGISTRATION CONFIRMED</h3>
         <p class="success-desc">
-          Your spot has been reserved. A confirmation email has been dispatched.
+          Your reservation has been received. A confirmation pass and detailed agenda have been dispatched.
         </p>
         <button class="btn-primary" id="btn-close-success">DONE</button>
       </div>
